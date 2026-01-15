@@ -1,0 +1,332 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', monospace;
+    background-color: #3a3a5c;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Game Boy frame styling */
+.menu-container {
+    display: flex;
+    justify-content: center;
+}
+
+.game-boy-frame {
+    background: linear-gradient(145deg, #c8c8d0 0%, #a0a0a8 100%);
+    border-radius: 20px 20px 60px 20px;
+    padding: 20px;
+    box-shadow:
+        8px 8px 0 #2a2a3c,
+        inset 2px 2px 4px rgba(255,255,255,0.5);
+}
+
+.screen-container {
+    background-color: #4a4a6a;
+    border-radius: 10px;
+    padding: 25px 20px;
+    box-shadow: inset 4px 4px 8px rgba(0,0,0,0.5);
+    background-color: #9bbc0f;
+    min-width: 300px;
+}
+
+/* Titles */
+.title {
+    font-size: 28px;
+    color: #0f380f;
+    text-align: center;
+    text-shadow: 3px 3px 0 #306230;
+    letter-spacing: 4px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #306230;
+    text-align: center;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+}
+
+/* Menu options */
+.menu-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background-color: #8bac0f;
+    border: 3px solid #0f380f;
+    text-decoration: none;
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #0f380f;
+    transform: translate(2px, 2px);
+}
+
+.menu-item:hover .game-name {
+    color: #9bbc0f;
+}
+
+.menu-item:hover .block,
+.menu-item:hover .snake-segment,
+.menu-item:hover .snake-head,
+.menu-item:hover .simon-quad,
+.menu-item:hover .mine-dot,
+.menu-item:hover .connect-dot {
+    background-color: #9bbc0f;
+}
+
+.menu-item:active {
+    transform: translate(4px, 4px);
+}
+
+/* Game icons */
+.game-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    justify-content: center;
+    align-content: center;
+}
+
+/* Tetris icon */
+.tetris-icon {
+    transform: rotate(-90deg);
+}
+
+.tetris-icon .block {
+    width: 8px;
+    height: 8px;
+    background-color: #0f380f;
+}
+
+/* Snake icon */
+.snake-icon {
+    flex-wrap: nowrap;
+    gap: 3px;
+}
+
+.snake-segment {
+    width: 8px;
+    height: 8px;
+    background-color: #0f380f;
+    border-radius: 1px;
+}
+
+.snake-head {
+    width: 10px;
+    height: 10px;
+    background-color: #0f380f;
+    border-radius: 2px;
+}
+
+/* Simon icon */
+.simon-icon {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+}
+
+.simon-quad {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+}
+
+.simon-quad.green { background-color: #306230; }
+.simon-quad.red { background-color: #5a3030; }
+.simon-quad.yellow { background-color: #5a5a30; }
+.simon-quad.blue { background-color: #303050; }
+
+/* Minesweeper icon */
+.mine-icon {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+}
+
+.mine-dot {
+    width: 14px;
+    height: 14px;
+    background-color: #306230;
+    border-radius: 2px;
+}
+
+.mine-dot.flag {
+    background-color: #5a3030;
+}
+
+.mine-dot.bomb {
+    background-color: #0f380f;
+    border-radius: 50%;
+}
+
+/* Connect 4 icon */
+.connect-icon {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+}
+
+.connect-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.connect-dot.dark {
+    background-color: #0f380f;
+}
+
+.connect-dot.light {
+    background-color: #5a5a30;
+}
+
+.game-name {
+    font-size: 14px;
+    color: #0f380f;
+    letter-spacing: 2px;
+}
+
+/* Instructions */
+.instructions {
+    font-size: 8px;
+    color: #306230;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Decorations - D-pad and buttons */
+.decorations {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.dpad {
+    position: relative;
+    width: 70px;
+    height: 70px;
+}
+
+.dpad-up, .dpad-down, .dpad-left, .dpad-right {
+    position: absolute;
+    background-color: #2a2a3c;
+    border-radius: 3px;
+}
+
+.dpad-up, .dpad-down {
+    width: 22px;
+    height: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dpad-up {
+    top: 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.dpad-down {
+    bottom: 0;
+    border-radius: 0 0 5px 5px;
+}
+
+.dpad-left, .dpad-right {
+    width: 26px;
+    height: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dpad-left {
+    left: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.dpad-right {
+    right: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.dpad-center {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background-color: #2a2a3c;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    transform: rotate(-25deg);
+}
+
+.btn-a, .btn-b {
+    width: 35px;
+    height: 35px;
+    background-color: #8b2252;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    color: #2a2a3c;
+    box-shadow:
+        inset -2px -2px 4px rgba(0,0,0,0.3),
+        inset 2px 2px 4px rgba(255,255,255,0.1);
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .screen-container {
+        min-width: 260px;
+        padding: 20px 15px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .menu-item {
+        padding: 12px 15px;
+    }
+
+    .game-name {
+        font-size: 12px;
+    }
+
+    .decorations {
+        display: none;
+    }
+}

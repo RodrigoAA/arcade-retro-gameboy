@@ -1,0 +1,193 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', monospace;
+    background-color: #3a3a5c;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Game Boy frame styling */
+.game-container {
+    display: flex;
+    justify-content: center;
+}
+
+.game-boy-frame {
+    background: linear-gradient(145deg, #c8c8d0 0%, #a0a0a8 100%);
+    border-radius: 20px 20px 60px 20px;
+    padding: 20px;
+    box-shadow:
+        8px 8px 0 #2a2a3c,
+        inset 2px 2px 4px rgba(255,255,255,0.5);
+}
+
+.screen-container {
+    background-color: #4a4a6a;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: inset 4px 4px 8px rgba(0,0,0,0.5);
+}
+
+/* Header with back button */
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    left: 0;
+    font-size: 16px;
+    color: #9bbc0f;
+    text-decoration: none;
+    padding: 5px 10px;
+    text-shadow: 1px 1px 0 #306230;
+    transition: transform 0.1s ease;
+}
+
+.back-btn:hover {
+    transform: scale(1.2);
+    color: #c8d86f;
+}
+
+.game-title {
+    font-size: 14px;
+    color: #9bbc0f;
+    text-align: center;
+    text-shadow: 2px 2px 0 #306230;
+    letter-spacing: 4px;
+}
+
+.game-area {
+    display: flex;
+    gap: 15px;
+    background-color: #9bbc0f;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Canvas styling */
+#game-canvas {
+    border: 4px solid #0f380f;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    background-color: #8bac0f;
+}
+
+#preview-canvas {
+    border: 2px solid #0f380f;
+    background-color: #8bac0f;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    display: block;
+    margin: 5px auto 0;
+}
+
+/* Side panel */
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 100px;
+}
+
+.info-box {
+    background-color: #8bac0f;
+    border: 2px solid #0f380f;
+    padding: 8px;
+    text-align: center;
+}
+
+.info-box .label {
+    display: block;
+    font-size: 7px;
+    color: #306230;
+    margin-bottom: 5px;
+}
+
+.info-box .value {
+    display: block;
+    font-size: 12px;
+    color: #0f380f;
+}
+
+.info-box .value.small {
+    font-size: 8px;
+}
+
+/* Controls info */
+.controls-info {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.controls-info p {
+    font-size: 6px;
+    color: #4a4a6a;
+    letter-spacing: 1px;
+}
+
+/* Pause overlay handled in JS */
+.paused-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #9bbc0f;
+    font-size: 16px;
+    text-shadow: 2px 2px 0 #0f380f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .game-boy-frame {
+        padding: 15px;
+        border-radius: 15px 15px 40px 15px;
+    }
+
+    .game-area {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .side-panel {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        min-width: auto;
+    }
+
+    .info-box {
+        min-width: 70px;
+        padding: 6px;
+    }
+
+    .info-box .label {
+        font-size: 6px;
+    }
+
+    .info-box .value {
+        font-size: 10px;
+    }
+
+    .game-title {
+        font-size: 12px;
+    }
+
+    .controls-info p {
+        font-size: 5px;
+    }
+}

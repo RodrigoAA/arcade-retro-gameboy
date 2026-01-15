@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Retro - Game Boy Style</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+    <div class="menu-container">
+        <div class="game-boy-frame">
+            <div class="screen-container">
+                <h1 class="title">ARCADE</h1>
+                <h2 class="subtitle">RETRO</h2>
+
+                <div class="menu-options">
+                    <a href="tetris.html" class="menu-item">
+                        <div class="game-icon tetris-icon">
+                            <div class="block"></div>
+                            <div class="block"></div>
+                            <div class="block"></div>
+                            <div class="block"></div>
+                        </div>
+                        <span class="game-name">TETRIS</span>
+                    </a>
+
+                    <a href="snake.html" class="menu-item">
+                        <div class="game-icon snake-icon">
+                            <div class="snake-segment"></div>
+                            <div class="snake-segment"></div>
+                            <div class="snake-segment"></div>
+                            <div class="snake-head"></div>
+                        </div>
+                        <span class="game-name">SNAKE</span>
+                    </a>
+
+                    <a href="simon.html" class="menu-item">
+                        <div class="game-icon simon-icon">
+                            <div class="simon-quad green"></div>
+                            <div class="simon-quad red"></div>
+                            <div class="simon-quad yellow"></div>
+                            <div class="simon-quad blue"></div>
+                        </div>
+                        <span class="game-name">SIMON</span>
+                    </a>
+
+                    <a href="minesweeper.html" class="menu-item">
+                        <div class="game-icon mine-icon">
+                            <div class="mine-dot"></div>
+                            <div class="mine-dot"></div>
+                            <div class="mine-dot flag"></div>
+                            <div class="mine-dot bomb"></div>
+                        </div>
+                        <span class="game-name">MINAS</span>
+                    </a>
+
+                    <a href="connect4.html" class="menu-item">
+                        <div class="game-icon connect-icon">
+                            <div class="connect-dot dark"></div>
+                            <div class="connect-dot light"></div>
+                            <div class="connect-dot dark"></div>
+                            <div class="connect-dot light"></div>
+                        </div>
+                        <span class="game-name">4 LINEA</span>
+                    </a>
+                </div>
+
+                <p class="instructions">Selecciona un juego</p>
+            </div>
+
+            <div class="decorations">
+                <div class="dpad">
+                    <div class="dpad-up"></div>
+                    <div class="dpad-down"></div>
+                    <div class="dpad-left"></div>
+                    <div class="dpad-right"></div>
+                    <div class="dpad-center"></div>
+                </div>
+                <div class="buttons">
+                    <div class="btn-b">B</div>
+                    <div class="btn-a">A</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/audio.js"></script>
+    <script>
+        // Play menu sounds
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                if (window.AudioManager) AudioManager.play('hover');
+            });
+            item.addEventListener('click', () => {
+                if (window.AudioManager) AudioManager.play('select');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon - Estilo Game Boy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-boy-frame">
+            <div class="screen-container">
+                <div class="header-row">
+                    <a href="index.html" class="back-btn" title="Volver al menu">&#9664;</a>
+                    <h1 class="game-title">SIMON</h1>
+                </div>
+                <div class="game-area simon-layout">
+                    <canvas id="game-canvas"></canvas>
+                    <div class="side-panel">
+                        <div class="info-box">
+                            <span class="label">RONDA</span>
+                            <span id="round" class="value">0</span>
+                        </div>
+                        <div class="info-box">
+                            <span class="label">RECORD</span>
+                            <span id="highscore" class="value">0</span>
+                        </div>
+                        <div class="info-box">
+                            <span class="label">ESTADO</span>
+                            <span id="status" class="value small">LISTO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="controls-info">
+                <p>Click en los colores | ENTER: Iniciar | R: Reiniciar | ESC: Menu</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/audio.js"></script>
+    <script src="js/simon/game.js"></script>
+</body>
+</html>
