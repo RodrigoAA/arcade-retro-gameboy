@@ -16,10 +16,21 @@ Una coleccion de juegos clasicos implementados con HTML5 Canvas y JavaScript van
 | **Simon** | Memoriza y repite secuencias | Secuencias infinitas, sonidos unicos por color |
 | **Buscaminas** | Encuentra las minas sin explotar | 10x10 celdas, 10 minas, cronometro |
 | **4 en Linea** | Conecta 4 fichas contra la CPU | IA con estrategia, contador de victorias |
+| **Celta de Vigo** | Clasificacion historica de jugadores | Top 10 leyendas del RC Celta |
 
 ## Demo
 
 Abre `index.html` en tu navegador para acceder al menu principal estilo Game Boy.
+
+### GitHub Pages
+
+Para acceder desde cualquier dispositivo (incluido movil):
+
+1. Ve a la configuracion del repositorio en GitHub
+2. Click en **Settings** > **Pages**
+3. En **Source**, selecciona la rama **master** y carpeta **/ (root)**
+4. Click en **Save**
+5. Espera unos minutos y accede desde: `https://TU_USUARIO.github.io/arcade-retro-gameboy/`
 
 ## Tecnologias
 
@@ -40,11 +51,13 @@ arcade-retro-gameboy/
 ├── simon.html              # Juego Simon
 ├── minesweeper.html        # Juego Buscaminas
 ├── connect4.html           # Juego 4 en Linea
+├── celta-vigo-ranking.html # Clasificacion historica Celta de Vigo
 ├── README.md               # Documentacion
 │
 ├── css/
 │   ├── styles.css          # Estilos compartidos de juegos
-│   └── menu.css            # Estilos del menu principal
+│   ├── menu.css            # Estilos del menu principal
+│   └── celta-ranking.css   # Estilos de la clasificacion Celta
 │
 └── js/
     ├── audio.js            # Sistema de audio 8-bit (Web Audio API)
