@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celta de Vigo - Clasificación Histórica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/celta-ranking.css">
+</head>
+<body>
+    <div class="ranking-container">
+        <div class="game-boy-frame">
+            <div class="screen-container">
+                <div class="header">
+                    <h1 class="title">CELTA</h1>
+                    <h2 class="subtitle">DE VIGO</h2>
+                    <p class="ranking-title">TOP JUGADORES</p>
+                </div>
+
+                <div class="ranking-list">
+                    <div class="player-item gold">
+                        <span class="rank">01</span>
+                        <div class="player-info">
+                            <span class="player-name">IAGO ASPAS</span>
+                            <span class="player-stats">⚽ 223 GOLES</span>
+                        </div>
+                    </div>
+
+                    <div class="player-item silver">
+                        <span class="rank">02</span>
+                        <div class="player-info">
+                            <span class="player-name">HUGO MALLO</span>
+                            <span class="player-stats">🛡️ 453 PARTIDOS</span>
+                        </div>
+                    </div>
+
+                    <div class="player-item bronze">
+                        <span class="rank">03</span>
+                        <div class="player-info">
+                            <span class="player-name">MOSTOVOI</span>
+                            <span class="player-stats">⭐ LEYENDA</span>
+                        </div>
+                    </div>
+
+                    <div class="player-item">
+                        <span class="rank">04</span>
+                        <div class="player-info">
+                            <span class="player-name">MAZINHO</span>
+                            <span class="player-stats">🏆 CAMPEON</span>
+                        </div>
+                    </div>
+
+                    <div class="player-item">
+                        <span class="rank">05</span>
+                        <div class="player-info">
+                            <span class="player-name">CLAUDE</span>
+                            <span class="player-stats">🎯 GOLEADOR</span>
+                        </div>
+                    </div>
+
+                    <div class="player-item">
+                        <span class="rank">06</span>
+                        <div class="player-info">
+                            <span class="player-name">GUSTAVO LOPEZ</span>
+                            <span class="player-stats">⚽ 95 GOLES</span>
+                        </div>
+                    </div>
+
+                    <div class="player-item">
+                        <span class="rank">07</span>
+                        <div class="player-info">
+                            <span class="player-name">NOLITO</span>
+                            <span class="player-stats">🌟 IDOLO</span>
+                        </div>
+                    </div>
+
+                    <div class="player-item">
+                        <span class="rank">08</span>
+                        <div class="player-info">
+                            <span class="player-name">PACO JEMEZ</span>
+                            <span class="player-stats">👨‍✈️ CAPITAN</span>
+                        </div>
+                    </div>
+
+                    <div class="player-item">
+                        <span class="rank">09</span>
+                        <div class="player-info">
+                            <span class="player-name">SERGIO</span>
+                            <span class="player-stats">🥅 PORTERO</span>
+                        </div>
+                    </div>
+
+                    <div class="player-item">
+                        <span class="rank">10</span>
+                        <div class="player-info">
+                            <span class="player-name">CATANHA</span>
+                            <span class="player-stats">⚽ 82 GOLES</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <p class="instructions">RC CELTA - FUNDADO 1923</p>
+                    <a href="index.html" class="back-button">← VOLVER AL MENU</a>
+                </div>
+            </div>
+
+            <div class="decorations">
+                <div class="dpad">
+                    <div class="dpad-up"></div>
+                    <div class="dpad-down"></div>
+                    <div class="dpad-left"></div>
+                    <div class="dpad-right"></div>
+                    <div class="dpad-center"></div>
+                </div>
+                <div class="buttons">
+                    <div class="btn-b">B</div>
+                    <div class="btn-a">A</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/audio.js"></script>
+    <script>
+        // Play menu sounds
+        document.querySelectorAll('.player-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                if (window.AudioManager) AudioManager.play('hover');
+            });
+        });
+
+        document.querySelector('.back-button').addEventListener('click', () => {
+            if (window.AudioManager) AudioManager.play('select');
+        });
+    </script>
+</body>
+</html>

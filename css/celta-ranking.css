@@ -16,7 +16,7 @@ body {
 }
 
 /* Game Boy frame styling */
-.menu-container {
+.ranking-container {
     display: flex;
     justify-content: center;
 }
@@ -28,20 +28,41 @@ body {
     box-shadow:
         8px 8px 0 #2a2a3c,
         inset 2px 2px 4px rgba(255,255,255,0.5);
+    max-width: 500px;
 }
 
 .screen-container {
-    background-color: #4a4a6a;
+    background-color: #9bbc0f;
     border-radius: 10px;
     padding: 25px 20px;
     box-shadow: inset 4px 4px 8px rgba(0,0,0,0.5);
-    background-color: #9bbc0f;
-    min-width: 300px;
+    min-width: 350px;
+    max-height: 600px;
+    overflow-y: auto;
 }
 
-/* Titles */
+/* Custom scrollbar */
+.screen-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.screen-container::-webkit-scrollbar-track {
+    background: #8bac0f;
+    border-radius: 4px;
+}
+
+.screen-container::-webkit-scrollbar-thumb {
+    background: #0f380f;
+    border-radius: 4px;
+}
+
+/* Header */
+.header {
+    margin-bottom: 25px;
+}
+
 .title {
-    font-size: 28px;
+    font-size: 24px;
     color: #0f380f;
     text-align: center;
     text-shadow: 3px 3px 0 #306230;
@@ -50,190 +71,143 @@ body {
 }
 
 .subtitle {
-    font-size: 18px;
+    font-size: 16px;
     color: #306230;
     text-align: center;
-    letter-spacing: 6px;
-    margin-bottom: 30px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
 }
 
-/* Menu options */
-.menu-options {
+.ranking-title {
+    font-size: 10px;
+    color: #0f380f;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 8px;
+    background-color: #8bac0f;
+    border: 2px solid #0f380f;
+}
+
+/* Ranking list */
+.ranking-list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-bottom: 25px;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-.menu-item {
+.player-item {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
+    gap: 12px;
+    padding: 12px 15px;
     background-color: #8bac0f;
     border: 3px solid #0f380f;
-    text-decoration: none;
     transition: all 0.1s ease;
     cursor: pointer;
 }
 
-.menu-item:hover {
+.player-item:hover {
     background-color: #0f380f;
     transform: translate(2px, 2px);
 }
 
-.menu-item:hover .game-name {
+.player-item:hover .rank,
+.player-item:hover .player-name,
+.player-item:hover .player-stats {
     color: #9bbc0f;
 }
 
-.menu-item:hover .block,
-.menu-item:hover .snake-segment,
-.menu-item:hover .snake-head,
-.menu-item:hover .simon-quad,
-.menu-item:hover .mine-dot,
-.menu-item:hover .connect-dot,
-.menu-item:hover .star-dot {
-    background-color: #9bbc0f;
+/* Gold, Silver, Bronze styles */
+.player-item.gold {
+    border-color: #5a5a30;
+    background-color: #7a9c0f;
 }
 
-.menu-item:active {
-    transform: translate(4px, 4px);
-}
-
-/* Game icons */
-.game-icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2px;
-    justify-content: center;
-    align-content: center;
-}
-
-/* Tetris icon */
-.tetris-icon {
-    transform: rotate(-90deg);
-}
-
-.tetris-icon .block {
-    width: 8px;
-    height: 8px;
-    background-color: #0f380f;
-}
-
-/* Snake icon */
-.snake-icon {
-    flex-wrap: nowrap;
-    gap: 3px;
-}
-
-.snake-segment {
-    width: 8px;
-    height: 8px;
-    background-color: #0f380f;
-    border-radius: 1px;
-}
-
-.snake-head {
-    width: 10px;
-    height: 10px;
-    background-color: #0f380f;
-    border-radius: 2px;
-}
-
-/* Simon icon */
-.simon-icon {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-}
-
-.simon-quad {
-    width: 16px;
-    height: 16px;
-    border-radius: 3px;
-}
-
-.simon-quad.green { background-color: #306230; }
-.simon-quad.red { background-color: #5a3030; }
-.simon-quad.yellow { background-color: #5a5a30; }
-.simon-quad.blue { background-color: #303050; }
-
-/* Minesweeper icon */
-.mine-icon {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3px;
-}
-
-.mine-dot {
-    width: 14px;
-    height: 14px;
-    background-color: #306230;
-    border-radius: 2px;
-}
-
-.mine-dot.flag {
-    background-color: #5a3030;
-}
-
-.mine-dot.bomb {
-    background-color: #0f380f;
-    border-radius: 50%;
-}
-
-/* Connect 4 icon */
-.connect-icon {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3px;
-}
-
-.connect-dot {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-}
-
-.connect-dot.dark {
-    background-color: #0f380f;
-}
-
-.connect-dot.light {
+.player-item.gold .rank {
     background-color: #5a5a30;
+    color: #fff;
 }
 
-/* Celta icon */
-.celta-icon {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3px;
+.player-item.silver {
+    border-color: #4a4a4a;
+    background-color: #7a9c0f;
 }
 
-.star-dot {
-    width: 14px;
-    height: 14px;
-    background-color: #306230;
-    border-radius: 50%;
+.player-item.silver .rank {
+    background-color: #4a4a4a;
+    color: #fff;
 }
 
-.star-dot.highlight {
+.player-item.bronze {
+    border-color: #5a3030;
+    background-color: #7a9c0f;
+}
+
+.player-item.bronze .rank {
+    background-color: #5a3030;
+    color: #fff;
+}
+
+.rank {
+    font-size: 16px;
+    color: #fff;
     background-color: #0f380f;
-}
-
-.game-name {
-    font-size: 14px;
-    color: #0f380f;
+    padding: 8px 10px;
+    min-width: 45px;
+    text-align: center;
     letter-spacing: 2px;
 }
 
-/* Instructions */
+.player-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+.player-name {
+    font-size: 11px;
+    color: #0f380f;
+    letter-spacing: 1px;
+}
+
+.player-stats {
+    font-size: 7px;
+    color: #306230;
+    letter-spacing: 1px;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
 .instructions {
-    font-size: 8px;
+    font-size: 7px;
     color: #306230;
     text-align: center;
     letter-spacing: 1px;
+}
+
+.back-button {
+    font-size: 9px;
+    color: #0f380f;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #8bac0f;
+    border: 2px solid #0f380f;
+    letter-spacing: 1px;
+    transition: all 0.1s ease;
+}
+
+.back-button:hover {
+    background-color: #0f380f;
+    color: #9bbc0f;
+    transform: translate(2px, 2px);
 }
 
 /* Decorations - D-pad and buttons */
@@ -323,26 +297,40 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 400px) {
+@media (max-width: 480px) {
+    .game-boy-frame {
+        max-width: 100%;
+    }
+
     .screen-container {
-        min-width: 260px;
+        min-width: 280px;
         padding: 20px 15px;
     }
 
     .title {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .subtitle {
         font-size: 14px;
     }
 
-    .menu-item {
-        padding: 12px 15px;
+    .player-item {
+        padding: 10px 12px;
     }
 
-    .game-name {
-        font-size: 12px;
+    .rank {
+        font-size: 14px;
+        min-width: 40px;
+        padding: 6px 8px;
+    }
+
+    .player-name {
+        font-size: 9px;
+    }
+
+    .player-stats {
+        font-size: 6px;
     }
 
     .decorations {
